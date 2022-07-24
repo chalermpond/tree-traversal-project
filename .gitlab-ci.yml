@@ -1,0 +1,34 @@
+image: node:10
+
+services:
+  - mongo:4
+
+cache:
+  paths:
+    - node_modules/
+
+stages:
+  - install
+  - build
+  
+install:
+  stage: install
+  only:
+    - master
+  script:
+    - npm install
+  artifacts:
+    paths:
+      - node_modules
+
+build:
+  stage: build
+  only:
+    - master
+  script:
+    - npm run build
+  dependencies:
+    - install
+  artifacts:
+    paths:
+      - dist

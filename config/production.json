@@ -1,0 +1,50 @@
+{
+  "application": {
+    "port": 8080
+  },
+  "mongodb": {
+    "servers": "172.31.26.144",
+    "port": 27017,
+    "dbName": "prod_thaiins"
+  },
+  "auth": {
+    "ignoreExpiration": false,
+    "public": "./vendor/key/jwtRS256.key.pub",
+    "private": "./vendor/key/jwtRS256.key"
+  },
+  "authAdmin": {
+    "ignoreExpiration": true,
+    "public": "./vendor/key/admin.jwtRS256.key.pub",
+    "private": "./vendor/key/admin.jwtRS256.key"
+  },
+  "static": {
+    "thailand": "./vendor/static/thailand.json"
+  },
+  "email": {
+    "user": "invitation@smartregis.com",
+    "pass": "[yaz,xV?RAum",
+    "host": "sg2plcpnl0111.prod.sin2.secureserver.net",
+    "port": 465,
+    "secure": true
+  },
+  "links": {
+    "registerDomain": "http://event.smartregis.com"
+  },
+  "node": {
+    "dp": 30,
+    "rp": 10
+  },
+  "tpb": {
+    "soapUrl": "http://tpbinsure.thaipaiboon.com/ePolicy/BrokerService.asmx",
+    "soapHeader": {
+      "Content-Type": "text/xml;charset=UTF-8",
+      "soapAction": "http://tempuri.org/GetPolicyComp"
+    },
+    "soapAssign": {
+      "agent": "08017692",
+      "auth": "TPBxI08017692",
+      "value": "?",
+      "search": "REF"
+    }
+  }
+}

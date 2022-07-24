@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ pageTitle }}</title>
+    <style>
+        body {
+            text-align: center;
+            padding-top: 75px;
+            background: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+<div id="success-img">
+    <img src="{{ successImage }}" style="width: 150px;" alt="success">
+</div>
+{{#if successTemplate}}
+<div class="message-success">
+    <h1>สำเร็จ</h1>
+    {{#if policyNo}}
+      <p>หมายเลขกรรมธ์ของท่านคือ</p>
+      <h2>{{ policyNo }}</h2>
+    {{/if}}
+    <p>ดาวน์โหลดแอปพลิเคชั่นและลงทะเบียน</p>
+</div>
+<div class="store-img">
+    <a href=''>
+        <img alt='ดาวน์โหลดได้จาก Google Play' style="width: 250px;" src='https://play.google.com/intl/en_us/badges/images/generic/th_badge_web_generic.png'/>
+    </a>
+</div>
+{{/if}}
+
+{{#if failTemplate}}
+    <div class="message-fail">
+        <h1>ไม่สำเร็จ</h1>
+        <p>{{ message }}</p>
+    </div>
+{{/if}}
+</body>
+</html>
